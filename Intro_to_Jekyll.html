@@ -196,6 +196,30 @@ NOTE: 1) After modifying the _config.yml file we need to restart the project or 
 
 
 
+**************************************************** Video 11 *****************************************************
 
+Themes in Jekyll:
+
+When we create a new Jekyll website Jekyll installs a site that uses a gem-based theme called Minima.
+Default theme Minima.
+
+NOTE:
+We can search the themes on the ==> https://rubygems.org/
+We can preview theme there and copy and paste the theme name in "Gemfile" in Jekyll project.
+We can also add the theme name in the "_config.yml" file there.
+After that we can install the theme and other dependencies by below command.
+
+How to install all dependencies from the Gemfile?
+> bundle install
+
+
+NOTE: In Jekyll, moving from one theme to another can be quite challenging.
+     Because themes may have different:
+          Layouts —> e.g., _layouts/default.html, post.html
+          Includes —> reusable components like header, footer, navigation
+          CSS/JavaScript —> each theme may style and structure things differently
+          Front Matter —> themes may expect different variables such as layout, author, categories, etc.
+          Configuration —> _config.yml settings can differ
+          Plugins —> one theme may depend on plugins that another doesn't use
 
 -->
