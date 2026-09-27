@@ -134,14 +134,37 @@ When we are working with the Jekyll we can have the two types of the pages like:
 NOTE: We can add pages directly in outer project folder or we can create a seperate folder for it.
       like if we add the page directly in outer project folder ==> like about.markdown
       we can acess it like the localhost:4000/about
-      But if we create a folder and keep the like pages/contact.markdown
-      we can aceess it like localhost:4000/pages/about
+      But if we create a folder and keep the like pages/donate.markdown
+      we can aceess it like localhost:4000/pages/donate
 
 **************************************************** Video 9 *****************************************************
 
+Permalinks in Jekyll:   { refer 2026-09-27-permalink-demo.markdown }
 
+What is Permalink ?
+Ans: A permalink is simply the URL (web address) of a page or post on your Jekyll website.
+     For e.g  ==> https://example.com/about/
+     Here, /about/ is the permalink.
 
+NOTE: 1) We can provide the custom permalink with "permalink" attribute in front matter.
+      For e.g ==> 
+     ---
+          layout: "post"
+          title: "Permalink attribute demo"
+          categories: testing testing2
 
+          permalink: "/testing-path/test/test2"
+         
+     ---
+      2) We can also give the ref of the other attributes in the parmalink as bellow.
+      for e.g => 
+      ---
+        layout: "post"
+        title: "Permalink attribute demo"
+        categories: testing testing2
+
+        permalink: /:categories/:title
+      ---
 
 
 -->
