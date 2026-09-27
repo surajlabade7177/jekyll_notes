@@ -164,7 +164,38 @@ NOTE: 1) We can provide the custom permalink with "permalink" attribute in front
         categories: testing testing2
 
         permalink: /:categories/:title
+
+        OR 
+
+        permalink: /:categories/:year/:month/:day/:title:output_ext
       ---
+
+
+**************************************************** Video 10 *****************************************************
+
+Front Matter Defaults:   {Refer _config.yml file}
+
+What is Front Matter Defaults ?
+Ans: Front Matter Defaults allow you to set default Front Matter values for multiple pages or posts in one place in "_config.yml" file.
+     Instead of writing the same Front Matter again and again in every file, you define it once in _config.yml.
+
+     For E.g ==> We can write below things in  _config.yml.
+
+     defaults:
+          - scope:                    # scope tells Jekyll which files should get these defaults.
+               path: ""               # an empty string here means all files in the project.
+               type: "posts"          # Apply these defaults to all posts or posts under _posts folder.
+            values:                   # What defaults values should they get?
+               layout: "post"
+               author: "Hitman_45"
+               title: "Testing front matter defaults"
+
+NOTE: 1) After modifying the _config.yml file we need to restart the project or instance.
+      2) If we spcify the type: "posts" and any post under _posts folder has other attributes provided in that file front matter then it will give priority to it.
+
+
+
+
 
 
 -->

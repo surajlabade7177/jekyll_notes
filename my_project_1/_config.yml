@@ -34,6 +34,17 @@ theme: minima
 plugins:
   - jekyll-feed
 
+
+# Adding the front matter defaults here.
+# defaults:
+#   - scope:                    # scope tells Jekyll which files should get these defaults.
+#       path: ""                # an empty string here means all files in the project.
+#       type: "posts"           # Apply these defaults to all posts or posts under _posts folder.
+#     values:                   # What defaults values should they get?
+#       layout: "post"
+#       author: "Hitman_45"
+#       title: "Testing front matter defaults"
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
