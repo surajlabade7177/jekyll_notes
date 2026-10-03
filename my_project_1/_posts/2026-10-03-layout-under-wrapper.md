@@ -1,6 +1,6 @@
 ---
 layout: demo2
-# title: Demo Layout under wraper layout
+title: Demo Layout under wraper layout
 ---
 
 

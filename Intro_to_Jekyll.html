@@ -271,4 +271,42 @@ NOTE: Basically we can have the multiple layouts under the wrapper layout.
 
 Variables in Jekyll:
 
+For "layout" refere the demo2.html file
+For "page" refere the demo2.html file
+For "content" refere the demo2.html file
+For "site" refere the wrapper_layout.html file
+
+
+What is mean by variables in Jekyll ?
+Ans: In Jekyll variables are values that Jekyll/Liquid provides or that you define yourself, and you use them inside your HTML templates.
+     Example: page.title
+
+Common Jekyll variables we will frequently see these:
+Main Jekyll objects:
+
+| Object            | Simple meaning                     | Example                 |
+| ----------------- | ---------------------------------- | ----------------------- |
+| `site`            | Entire website level variable      | `{{ site.title }}`      |
+| `page`            | Current page/post                  | `{{ page.title }}`      |
+| `layout`          | Current layout's data              | `{{ layout.author }}`   |
+| `content`         | Content being passed into a layout | `{{ content }}`         |
+| `paginator`       | Pagination information             | `{{ paginator.page }}`  |
+| `site.posts`      | All blog posts                     | `{{ site.posts }}`      |
+| `site.data`       | Data from `_data`                  | `{{ site.data.users }}` |
+| `site.categories` | Posts grouped by category          | `{{ site.categories }}` |
+| `site.tags`       | Posts grouped by tag               | `{{ site.tags }}`       |
+
+
+NOTE: Everything you see after a dot is not a separate Jekyll object.
+     site, page, layout → objects
+     title, author, posts, categories → properties/data inside those objects
+
+
+So don't try to memorize everything at once. For your current Jekyll learning, I'd learn in this order:
+site → page → layout → content → site.posts → site.data → Liquid loops/conditions.
+
+
+
+
+
 -->
