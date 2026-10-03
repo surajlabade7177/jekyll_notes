@@ -312,8 +312,30 @@ NOTE: "site" variable most of the time deals with the _config.yml file related d
 
 **************************************************** Video 14 *****************************************************
 
-Includes in Jekyll:
+Includes in Jekyll:   {refer the _includes folder and navbar.html file and wrapper_layout.html file}
 
+What is includes in jekyll ?
+Ans: Includes in Jekyll as reusable small pieces of HTML that you can create once and use in many places.
+     Think it like a component or we can say common component sytem we uses in react js.
+
+Why do we need Includes?
+Ans: Suppose your website has the same navbar on 10 pages.
+     Instead of writing this navbar HTML on every page, you can create it once as an include.
+     we can have the _includes folder and inside we can create navbar.html file.
+     <nav>
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+     </nav>
+    Now we can use that navbar in our wraper or other html files.
+
+    We can use the  {% include navbar.html %}
+
+NOTE: Refer navbar.html, wrapper_layout.html, navbar.style.css files.
+
+      This is the link of the file where we have written the CSS of navbar
+     <link rel="stylesheet" href="{{ '/assets/css/navbar.style.css' | relative_url }}">
+      Need to add this under <head> tag in wrapper or other file where we are using the navbar file.
 
 
 -->

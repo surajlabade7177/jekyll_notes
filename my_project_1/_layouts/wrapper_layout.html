@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>{{ site.title }}</title>    <!-- From the front matter title variable to the here -->
+    <title>{{ site.title }}</title> <!-- From the front matter title variable to the here -->
+
+
+    <!-- This is the link of the file where we have written the CSS of navbar -->
+     <link rel="stylesheet" href="{{ '/assets/css/navbar.style.css' | relative_url }}">
 
     <style>
         /* Whole page */
@@ -109,6 +114,9 @@
 
 <body>
 
+    <!-- NOTE: Here we are including the navbar here -->
+    {% include navbar.html %}
+
     <!-- High-level wrapper -->
     <header>
         <h1>My Jekyll Blog</h1>
@@ -157,4 +165,5 @@
     </footer>
 
 </body>
+
 </html>
