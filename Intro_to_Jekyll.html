@@ -255,7 +255,20 @@ Ans: Jekyll itself does NOT provide post.html, page.html, or default.html automa
      They are common/conventional layout names used in Jekyll projects and themes.
 
 
-NOTE: Basically we can have the layout under the wrapper layout.
+NOTE: Basically we can have the multiple layouts under the wrapper layout.
+      This is actually a very common and useful concept in Jekyll. You can have layouts that use other layouts. 
+      This is called layout inheritance / nested layouts.
       Refer the wrapper_layout.html file and demo2.html file and the 2026-10-03-layout-under-wrapper.md files.
+
+
+     wrapper_layout.html    // we can give ny to this
+          ↓
+     page.html              //  we can have any name to this.
+          ↓
+     about.md               //  we can have any name to this.
+
+**************************************************** Video 11 *****************************************************
+
+
 
 -->
