@@ -337,5 +337,11 @@ NOTE: Refer navbar.html, wrapper_layout.html, navbar.style.css files.
      <link rel="stylesheet" href="{{ '/assets/css/navbar.style.css' | relative_url }}">
       Need to add this under <head> tag in wrapper or other file where we are using the navbar file.
 
+NOTE: We can pass values/attributes from the layout (wrapper) to an Include. This is very useful in Jekyll.
+          
+     {% include navbar.html color="lightblue"%}   ==> Passing from the wrapper_layout.html
+
+     We can use it like this -> navbar.html
+     <div class="nav-links" style="background-color: {{ include.color }};">
 
 -->
