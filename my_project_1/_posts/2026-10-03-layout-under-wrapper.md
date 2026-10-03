@@ -1,0 +1,10 @@
+---
+layout: demo2
+# title: Demo Layout under wraper layout
+---
+
+
+This is the markdown post of the 2026-10-03-layout-under-wrapper.md
+Basically we are adding the layout under the wrapper layout.
+Refer the wrapper_layout.html file and demo2.html file.
+This content will be shown at the demo2.html file
