@@ -1,0 +1,12 @@
+<h2>This is the looping demo in Jekyll</h2>
+
+<div style="background-color: lightblue;">
+
+    {% for post in site.posts %}       <!-- // For each post inside site.posts -->
+
+    <li><a href="{{post.url}}">{{post.title}}</a></li> <br>
+    <hr>
+
+    {% endfor %}                        <!-- Ending looop here -->
+
+</div>

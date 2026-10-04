@@ -1,0 +1,3 @@
+---
+layout: looping_demo
+---

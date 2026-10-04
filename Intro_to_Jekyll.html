@@ -344,4 +344,28 @@ NOTE: We can pass values/attributes from the layout (wrapper) to an Include. Thi
      We can use it like this -> navbar.html
      <div class="nav-links" style="background-color: {{ include.color }};">
 
+**************************************************** Video 15 *****************************************************
+
+Looping through posts:
+
+What is looping in Jekyll ?
+Ans: Looping means going through a collection of items one by one and doing something with each item.
+     For e.g => The most common example is looping through blog posts.
+
+     {% for post in site.posts %}    // For each post inside site.posts
+
+     <h2>{{ post.title }}</h2>
+     <p>{{ post.date }}</p>
+
+     {% endfor %}
+
+
+
+
+
+
+
+
+
+
 -->
