@@ -1,0 +1,8 @@
+{% for person in site.data.contacts %}   <!-- We can access the data files like this -->
+
+<h4>{{person.name}}</h4>
+<h3>{{person.contact}}</h3>
+
+<br><hr>
+
+{% endfor %}
