@@ -346,7 +346,7 @@ NOTE: We can pass values/attributes from the layout (wrapper) to an Include. Thi
 
 **************************************************** Video 15 *****************************************************
 
-Looping through posts:
+Looping through posts:    {  Refer looping_demo.html & 2026-10-04-looping_demo.md  }
 
 What is looping in Jekyll ?
 Ans: Looping means going through a collection of items one by one and doing something with each item.
@@ -360,6 +360,33 @@ Ans: Looping means going through a collection of items one by one and doing some
      {% endfor %}
 
 
+**************************************************** Video 16 *****************************************************
+
+Conditionals in Jekyll:    {Refer conditional_demo.html  &  conditional_demo.md}
+
+NOTE: In Jekyll, conditionals are used when you want to say:
+      "If something is true, show this; otherwise, show something else."
+
+
+{   Refer conditional_demo_2.html   }
+
+NOTE: We can use and and or in Jekyll/Liquid conditionals.  
+
+// and example:
+
+{% if page.category == "jekyll" and page.featured %}
+  <p>Featured Jekyll Post</p>
+{% endif %}
+
+
+// or example:
+
+{% if page.category == "jekyll" or page.category == "docker" %}
+  <p>Technical Post</p>
+{% endif %}
+
+
+**************************************************** Video 17 *****************************************************
 
 
 

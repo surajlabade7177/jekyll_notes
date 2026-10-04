@@ -1,0 +1,16 @@
+{% if page.title == "Conditionals Demo" and page.category == "Jekyll" %}    <!-- and operator  -->
+
+<h1> This is conditional demo page 1</h1>
+
+{% elsif page.title == "Conditionals Demo 2"  %}       <!-- NOTE: Notice " elsif " here  -->
+
+<h1> This is conditional demo page 2</h1>
+
+{% else %}
+
+<h1>Nothing matched </h1>           <!-- NOTE: Notice " else " here  -->
+
+{% endif %}
+
+
+{{content}}
