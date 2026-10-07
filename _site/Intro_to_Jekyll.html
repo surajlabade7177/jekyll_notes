@@ -401,7 +401,7 @@ NOTE: Jekyll has a special folder called: _data.
 
 **************************************************** Video 18 *****************************************************
 
-Static files in Jekyll:
+Static files in Jekyll:    { Refer static_file_demo.html  &  2026-10-07-static-files-demo.md }
 
 What is Static files in Jekyll ?
 Ans: In Jekyll, static files are files that Jekyll doesn't process or modify. 
@@ -429,5 +429,18 @@ Ans: In Jekyll, static files are files that Jekyll doesn't process or modify.
           logo.png
           script.js
           resume.pdf
+
+
+NOTE: We can also provide the "front matter" basically default front matters to this website in _config.yml file.
+
+     Example :
+
+     defaults:
+       - scope:
+          path: "assets/img"
+         values:
+          image: true
+
+     Also refer the for loop in  static_file_demo.html file.
 
 -->
