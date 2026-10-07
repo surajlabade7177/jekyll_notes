@@ -137,6 +137,10 @@ NOTE: We can add pages directly in outer project folder or we can create a seper
       But if we create a folder and keep the like pages/donate.markdown
       we can aceess it like localhost:4000/pages/donate
 
+
+What is diff between the pages and posts ? When we need to use the posts and when we need to use the pages ?
+Ans:
+
 **************************************************** Video 9 *****************************************************
 
 Permalinks in Jekyll:   { refer 2026-09-27-permalink-demo.markdown }
@@ -172,6 +176,7 @@ NOTE: 1) We can provide the custom permalink with "permalink" attribute in front
 
 
 **************************************************** Video 10 *****************************************************
+
 
 Front Matter Defaults:   {Refer _config.yml file}
 
@@ -225,13 +230,204 @@ NOTE: In Jekyll, moving from one theme to another can be quite challenging.
 
 **************************************************** Video 12 *****************************************************
 
-Layouts in Jekyll:
+Layouts in Jekyll:   
+
+
+{ 2026-10-3-home-layout.markdown  & _layouts/demo1.html }
+{ 2026-10-03-my-first-layout-wrapper-demo.md  & _layouts/wrapper_layout.html }
+
+What is "layouts" in Jekyll ?
+Ans: In Jekyll, layouts are templates that define the common structure/design of your pages.
+     Layouts are nothing but the skeleton of HTML code that we can used to defined look and fill of different types of pages in website.
+
+NOTE : We can craete a seperate _layouts folder and inside it we can define the layouts there.
+
+what types of the layouts we have in jekyll ?
+Ans: In Jekyll, there are no fixed/built-in layout types that you must use. You can create your own layouts inside the _layouts folder.
+     Foe E.g ==> 
+     _layouts/
+          ├── default.html
+          ├── page.html
+          └── post.html
+
+
+Are post, page, and default pre-defined?
+Ans: Jekyll itself does NOT provide post.html, page.html, or default.html automatically.
+     They are common/conventional layout names used in Jekyll projects and themes.
+
+
+NOTE: Basically we can have the multiple layouts under the wrapper layout.
+      This is actually a very common and useful concept in Jekyll. You can have layouts that use other layouts. 
+      This is called layout inheritance / nested layouts.
+      Refer the wrapper_layout.html file and demo2.html file and the 2026-10-03-layout-under-wrapper.md files.
+
+
+     wrapper_layout.html    // we can give ny to this
+          ↓
+     page.html              //  we can have any name to this.
+          ↓
+     about.md               //  we can have any name to this.
 
 
 
+**************************************************** Video 13 *****************************************************
+
+Variables in Jekyll:
+
+For "layout" refere the demo2.html file
+For "page" refere the demo2.html file
+For "content" refere the demo2.html file
+For "site" refere the wrapper_layout.html file
+
+
+What is mean by variables in Jekyll ?
+Ans: In Jekyll variables are values that Jekyll/Liquid provides or that you define yourself, and you use them inside your HTML templates.
+     Example: page.title
+
+Common Jekyll variables we will frequently see these:
+Main Jekyll objects:
+
+| Object            | Simple meaning                     | Example                 |
+| ----------------- | ---------------------------------- | ----------------------- |
+| `site`            | Entire website level variable      | `{{ site.title }}`      |
+| `page`            | Current page/post                  | `{{ page.title }}`      |
+| `layout`          | Current layout's data              | `{{ layout.author }}`   |
+| `content`         | Content being passed into a layout | `{{ content }}`         |
+| `paginator`       | Pagination information             | `{{ paginator.page }}`  |
+| `site.posts`      | All blog posts                     | `{{ site.posts }}`      |
+| `site.data`       | Data from `_data`                  | `{{ site.data.users }}` |
+| `site.categories` | Posts grouped by category          | `{{ site.categories }}` |
+| `site.tags`       | Posts grouped by tag               | `{{ site.tags }}`       |
+
+
+NOTE: Everything you see after a dot is not a separate Jekyll object.
+     site, page, layout → objects
+     title, author, posts, categories → properties/data inside those objects.
+
+So don't try to memorize everything at once. For your current Jekyll learning, I'd learn in this order:
+site → page → layout → content → site.posts → site.data → Liquid loops/conditions.
+
+NOTE: "site" variable most of the time deals with the _config.yml file related data there which is website level data.
+
+
+**************************************************** Video 14 *****************************************************
+
+Includes in Jekyll:   {refer the _includes folder and navbar.html file and wrapper_layout.html file}
+
+What is includes in jekyll ?
+Ans: Includes in Jekyll as reusable small pieces of HTML that you can create once and use in many places.
+     Think it like a component or we can say common component sytem we uses in react js.
+
+Why do we need Includes?
+Ans: Suppose your website has the same navbar on 10 pages.
+     Instead of writing this navbar HTML on every page, you can create it once as an include.
+     we can have the _includes folder and inside we can create navbar.html file.
+     <nav>
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+     </nav>
+    Now we can use that navbar in our wraper or other html files.
+
+    We can use the  {% include navbar.html %}
+
+NOTE: Refer navbar.html, wrapper_layout.html, navbar.style.css files.
+
+      This is the link of the file where we have written the CSS of navbar
+     <link rel="stylesheet" href="{{ '/assets/css/navbar.style.css' | relative_url }}">
+      Need to add this under <head> tag in wrapper or other file where we are using the navbar file.
+
+NOTE: We can pass values/attributes from the layout (wrapper) to an Include. This is very useful in Jekyll.
+          
+     {% include navbar.html color="lightblue"%}   ==> Passing from the wrapper_layout.html
+
+     We can use it like this -> navbar.html
+     <div class="nav-links" style="background-color: {{ include.color }};">
+
+**************************************************** Video 15 *****************************************************
+
+Looping through posts:    {  Refer looping_demo.html & 2026-10-04-looping_demo.md  }
+
+What is looping in Jekyll ?
+Ans: Looping means going through a collection of items one by one and doing something with each item.
+     For e.g => The most common example is looping through blog posts.
+
+     {% for post in site.posts %}    // For each post inside site.posts
+
+     <h2>{{ post.title }}</h2>
+     <p>{{ post.date }}</p>
+
+     {% endfor %}
+
+
+**************************************************** Video 16 *****************************************************
+
+Conditionals in Jekyll:    {Refer conditional_demo.html  &  conditional_demo.md}
+
+NOTE: In Jekyll, conditionals are used when you want to say:
+      "If something is true, show this; otherwise, show something else."
+
+
+{   Refer conditional_demo_2.html   }
+
+NOTE: We can use and and or in Jekyll/Liquid conditionals.  
+
+// and example:
+
+{% if page.category == "jekyll" and page.featured %}
+  <p>Featured Jekyll Post</p>
+{% endif %}
+
+
+// or example:
+
+{% if page.category == "jekyll" or page.category == "docker" %}
+  <p>Technical Post</p>
+{% endif %}
+
+
+**************************************************** Video 17 *****************************************************
+
+Data files in Jekyll :   { data_files_demo.html & _data/contacts.yml & data-files-demo.md}
+
+What is mean by data files in Jekyll ?
+Ans: Data Files are used to store information separately from your pages/posts so that you can easily reuse that information in your website.
+     Data files = a place where you store structured information.
+
+NOTE: Jekyll has a special folder called: _data.
+       We can create data files in the this folder like in .yml, JSON ro csv file only.
 
 
 
+**************************************************** Video 18 *****************************************************
 
+Static files in Jekyll:
+
+What is Static files in Jekyll ?
+Ans: In Jekyll, static files are files that Jekyll doesn't process or modify. 
+     Jekyll simply copies them to the final website as they are.
+     We can also say that the files do not has a "front matter" it can be a good exmaple of the front matter.
+
+     Simple example : Suppose your Jekyll project has:
+
+     my-jekyll-site/
+     ├── _posts/
+     ├── _layouts/
+     ├── _includes/
+     ├── assets/
+     │   ├── css/
+     │   │   └── style.css
+     │   ├── images/
+     │   │   └── logo.png
+     │   └── js/
+     │       └── script.js
+     ├── index.md
+     └── resume.pdf
+
+     Then the things like bwlow can be static files.
+          style.css
+          logo.png
+          script.js
+          resume.pdf
 
 -->

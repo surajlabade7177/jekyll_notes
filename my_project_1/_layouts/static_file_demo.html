@@ -1,0 +1,9 @@
+{% for file in site.static_files %}
+
+ {{file.name}} <br>
+ {{file.basename}} <br>  <!-- file name without extension -->
+ {{file.path}} <br>  <!--  here we are prinitng file path-->
+
+ <hr>
+
+{% endfor %}
